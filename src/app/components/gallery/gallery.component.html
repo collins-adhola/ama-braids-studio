@@ -1,0 +1,63 @@
+<section class="gallery">
+  <div class="container">
+
+    <div class="section-header" appScrollReveal>
+      <span class="section-label">Style Guide</span>
+      <div class="gold-divider"></div>
+      <h2>Find Your <em>Style</em></h2>
+      <p class="section-sub">A curated selection of styles available by private appointment.</p>
+    </div>
+
+    <div class="category-grid">
+      @for (cat of categories; track cat.id) {
+        <div class="category-card" appScrollReveal>
+          <div class="card-image">
+            <img [src]="cat.imageUrl" [alt]="cat.title" loading="lazy" decoding="async" />
+            <div class="image-overlay"></div>
+          </div>
+          <div class="card-body">
+            <h3>{{ cat.title }}</h3>
+            <p>{{ cat.description }}</p>
+            <ul class="tag-list" aria-label="Style attributes">
+              @for (tag of cat.tags; track tag) {
+                <li class="tag">{{ tag }}</li>
+              }
+            </ul>
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="gallery-cta" appScrollReveal>
+      <button class="btn-view-gallery" (click)="openModal()">View Full Style Gallery</button>
+    </div>
+
+  </div>
+</section>
+
+@if (modalOpen) {
+  <div class="modal-backdrop" (click)="closeModal()" role="dialog" aria-modal="true" aria-label="Style gallery">
+    <div class="modal" (click)="$event.stopPropagation()">
+
+      <div class="modal-header">
+        <span class="modal-label">Style Gallery</span>
+        <button class="modal-close" (click)="closeModal()" aria-label="Close gallery">✕</button>
+      </div>
+
+      <div class="modal-grid">
+        @for (img of allImages; track img.url) {
+          <div class="modal-tile">
+            <img [src]="img.url" [alt]="img.alt" loading="lazy" decoding="async" />
+            <span class="tile-category">{{ img.category }}</span>
+          </div>
+        }
+      </div>
+
+      <div class="modal-footer">
+        <p class="modal-note">All styles are available by private appointment · Consultation included</p>
+        <button class="btn-gold" (click)="bookAppointment()">Request Your Appointment →</button>
+      </div>
+
+    </div>
+  </div>
+}

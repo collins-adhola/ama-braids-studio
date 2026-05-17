@@ -1,0 +1,22 @@
+<section class="process">
+  <div class="container">
+    <div class="section-header" appScrollReveal>
+      <span class="section-label">How It Works</span>
+      <div class="gold-divider"></div>
+      <h2>Your <em>Journey</em></h2>
+    </div>
+
+    <div class="steps">
+      <div class="connecting-line" aria-hidden="true"></div>
+      @for (step of steps; track step.num) {
+        <div class="step" appScrollReveal>
+          <div class="step-circle">{{ step.num }}</div>
+          <div class="step-content">
+            <h3>{{ step.title }}</h3>
+            <p>{{ step.desc }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

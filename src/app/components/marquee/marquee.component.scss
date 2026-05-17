@@ -1,0 +1,26 @@
+.marquee-bar {
+  background: var(--gold);
+  padding: 14px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-track {
+  display: inline-block;
+  animation: marquee 28s linear infinite;
+}
+
+.marquee-content {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--black);
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}

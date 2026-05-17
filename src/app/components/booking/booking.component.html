@@ -1,0 +1,70 @@
+<section class="booking">
+  <div class="container">
+    <div class="booking-grid">
+
+      <!-- Sidebar -->
+      <div class="booking-sidebar">
+        <span class="section-label" appScrollReveal>Appointments</span>
+        <div class="gold-divider" appScrollReveal></div>
+        <h2 appScrollReveal>Begin Your <em>Consultation</em></h2>
+        <p appScrollReveal>
+          Each appointment begins with a personal enquiry. Share your style vision and preferred timing — AMA will review and be in touch to arrange your session.
+        </p>
+
+        <div class="sidebar-steps" appScrollReveal>
+          @for (step of steps; track step; let i = $index) {
+            <div class="sidebar-step">
+              <div class="step-num">{{ i + 1 }}</div>
+              <span>{{ step }}</span>
+            </div>
+          }
+        </div>
+
+        <div class="wa-alternative" appScrollReveal>
+          <p>Prefer a quick chat first?</p>
+          <button class="btn-gold-ghost" (click)="openWhatsApp()">
+            Message AMA on WhatsApp →
+          </button>
+        </div>
+      </div>
+
+      <!-- Panel -->
+      <div class="booking-panel" appScrollReveal>
+        <div class="panel-header">
+          <div class="avatar">AMA</div>
+          <div class="panel-title">
+            <span class="studio-name">AMA Hair Studio</span>
+            <span class="studio-sub">Battersea · Clapham · SW London</span>
+          </div>
+        </div>
+
+        <div class="service-list">
+          @for (svc of services; track svc.name) {
+            <div class="service-row" (click)="requestAppointment(svc)">
+              <div class="svc-icon">{{ svc.icon }}</div>
+              <div class="svc-info">
+                <span class="svc-name">{{ svc.name }}</span>
+                <span class="svc-meta">{{ svc.duration }} · {{ svc.note }}</span>
+              </div>
+              <span class="svc-cta">Request Appointment →</span>
+            </div>
+          }
+        </div>
+
+        <div class="panel-cta">
+          <button class="btn-enquire" (click)="requestAppointment()">
+            Request Your Appointment
+          </button>
+          <p class="cta-note">Not sure which service? Submit an enquiry and AMA will guide you.</p>
+        </div>
+
+        <div class="panel-footer">
+          <p>Availability: Mon–Fri evenings · Sat 9am–6pm · Sun 10am–4pm</p>
+          <p>£30 non-refundable deposit required to secure all appointments.</p>
+          <p>SumUp card reader available for in-person payments.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

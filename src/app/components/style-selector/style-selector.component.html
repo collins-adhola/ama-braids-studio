@@ -1,0 +1,90 @@
+<section class="style-selector">
+  <div class="container">
+    <div class="section-header" appScrollReveal>
+      <span class="section-label">Find Your Style</span>
+      <div class="gold-divider"></div>
+      <h2>Not Sure What <em>to Choose?</em></h2>
+      <p class="section-sub">
+        Browse styles by category, select the look you love, and we'll help you book it.
+      </p>
+    </div>
+
+    <div class="filters" appScrollReveal>
+      @for (f of filters; track f.key) {
+        <button
+          class="filter-btn"
+          [class.active]="activeFilter === f.key"
+          (click)="setFilter(f.key)"
+        >{{ f.label }}</button>
+      }
+    </div>
+
+    <div class="styles-grid">
+      @for (style of styles; track style.id) {
+        <div
+          class="style-card"
+          [class.hidden]="!style.visible"
+          [class.selected]="style.selected"
+          (click)="selectStyle(style)"
+        >
+          <div class="card-image">
+            <img
+              [src]="style.imageUrl"
+              [alt]="style.name"
+              loading="lazy"
+              (error)="$any($event.target).src=''"
+            />
+            @if (style.selected) {
+              <div class="selected-badge">✓ Selected</div>
+            }
+            @if (style.isUnisex) {
+              <div class="unisex-badge">Unisex</div>
+            }
+          </div>
+          <div class="card-body">
+            <span class="card-category">{{ style.categories[0] | titlecase }}</span>
+            <h3>{{ style.name }}</h3>
+            <p>{{ style.description }}</p>
+            <div class="card-meta">
+              <span class="meta-pill">{{ style.price }}</span>
+              <span class="meta-pill">{{ style.duration }}</span>
+              <span class="meta-pill">{{ style.hairType }}</span>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="selected-bar" [class.visible]="selectedStyle !== null" appScrollReveal>
+      <span class="selected-text">
+        You selected: <strong>{{ selectedStyle?.name }}</strong>
+      </span>
+      <button class="btn-gold" (click)="bookSelected()">
+        Request This Style →
+      </button>
+    </div>
+
+    <div class="explainer-grid" appScrollReveal>
+      <div class="explainer-card">
+        <h4>Cornrows — No Extensions</h4>
+        <ul>
+          <li>Uses only your natural hair</li>
+          <li>Flatter against the scalp</li>
+          <li>Faster to install (1–4 hrs typical)</li>
+          <li>Great for men and shorter hair</li>
+          <li>Lower price point</li>
+        </ul>
+      </div>
+      <div class="explainer-card">
+        <h4>Extension Braids — Added Hair</h4>
+        <ul>
+          <li>Synthetic or human hair added in</li>
+          <li>Adds length and volume</li>
+          <li>Longer install (5–10 hrs typical)</li>
+          <li>Lasts 6–10 weeks with care</li>
+          <li>Knotless technique available for comfort</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

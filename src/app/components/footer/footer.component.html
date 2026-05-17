@@ -1,0 +1,85 @@
+<footer class="footer">
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <span class="brand-name">AMA Hair Studio</span>
+          <p class="brand-tagline">Your Hair, Your Crown</p>
+          <p class="brand-desc">
+            Private braid studio in Battersea &amp; Clapham,<br />
+            South West London. Home-based, by appointment only.
+          </p>
+          <div class="social-links">
+            <button class="social-btn" (click)="openInstagram()" aria-label="Instagram">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </button>
+            <button class="social-btn" (click)="openWhatsApp()" aria-label="WhatsApp">
+              <ion-icon name="logo-whatsapp"></ion-icon>
+            </button>
+            <button class="social-btn" aria-label="Facebook">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="footer-nav">
+          <h5>Navigation</h5>
+          <ul>
+            <li><a (click)="scrollToSection('about')">About</a></li>
+            <li><a (click)="scrollToSection('gallery')">Style Guide</a></li>
+            <li><a (click)="scrollToSection('testimonials')">Reviews</a></li>
+            <li><a (click)="scrollToSection('enquire')">Request Appointment</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h5>Contact &amp; Hours</h5>
+          <div class="contact-items">
+            <div class="contact-item">
+              <span class="contact-label">WhatsApp</span>
+              <a (click)="openWhatsApp()" class="contact-value">+44 7846 040251</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Email</span>
+              <a href="mailto:hello@braidsbyama.co.uk" class="contact-value">hello&#64;braidsbyama.co.uk</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Location</span>
+              <span class="contact-value">
+                Battersea (SW8/SW11) · Clapham (SW4/SW9)<br />
+                Balham · Fulham · Chelsea · Richmond<br />
+                &amp; wider SW London — studio &amp; home visits
+              </span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Hours</span>
+              <span class="contact-value">
+                Evenings &amp; weekends<br />
+                By appointment only
+              </span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Payments</span>
+              <span class="contact-value">
+                Stripe (online deposits) ·<br />
+                SumUp (in-person)
+              </span>
+            </div>
+          </div>
+          <button class="btn-google" (click)="openGoogleBusiness()">
+            View on Google Business →
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <span class="copyright">&copy; {{ currentYear }} AMA Hair Studio. All rights reserved.</span>
+      <span class="footer-motto">Let Us Bring Out Your Beauty ♥</span>
+    </div>
+  </div>
+</footer>

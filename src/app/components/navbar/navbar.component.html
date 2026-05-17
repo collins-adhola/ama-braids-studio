@@ -1,0 +1,28 @@
+<nav class="navbar" [class.scrolled]="isScrolled">
+  <div class="navbar-inner">
+    <div class="logo" (click)="scrollToSection('hero')">AMA</div>
+
+    <ul class="nav-links">
+      <li><a (click)="scrollToSection('about')">About</a></li>
+      <li><a (click)="scrollToSection('gallery')">Styles</a></li>
+      <li><a (click)="scrollToSection('testimonials')">Reviews</a></li>
+    </ul>
+
+    <button class="btn-book" (click)="openEnquiry()">Request Appointment</button>
+
+    <button class="hamburger" (click)="toggleMenu()" aria-label="Toggle menu">
+      <ion-icon [name]="menuOpen ? 'close-outline' : 'menu-outline'"></ion-icon>
+    </button>
+  </div>
+
+  <div class="mobile-menu" [class.open]="menuOpen">
+    <ul>
+      <li><a (click)="scrollToSection('about')">About</a></li>
+      <li><a (click)="scrollToSection('gallery')">Styles</a></li>
+      <li><a (click)="scrollToSection('testimonials')">Reviews</a></li>
+      <li>
+        <a class="mobile-cta" (click)="openEnquiry()">Request Appointment</a>
+      </li>
+    </ul>
+  </div>
+</nav>

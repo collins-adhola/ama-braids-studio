@@ -1,0 +1,24 @@
+<section class="ig-strip">
+  <div class="container">
+    <div class="ig-inner" appScrollReveal>
+
+      <div class="ig-text">
+        <span class="section-label">Our Work</span>
+        <h3>Follow More Styles<br /><em>on Instagram</em></h3>
+        <p>Recent installs, braid inspiration, and client transformations.</p>
+        <button class="ig-cta" (click)="openInstagram()">
+          Follow &#64;braidsbyama →
+        </button>
+      </div>
+
+      <div class="ig-previews">
+        @for (img of previews; track img.url) {
+          <div class="ig-preview" (click)="openInstagram()" role="link" [attr.aria-label]="img.alt">
+            <img [src]="img.url" [alt]="img.alt" loading="lazy" decoding="async" />
+          </div>
+        }
+      </div>
+
+    </div>
+  </div>
+</section>

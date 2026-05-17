@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>AMA Hair Studio</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <app-root></app-root>
+
+  <!--
+    Hidden form so Netlify detects it at build time.
+    Angular is a SPA — Netlify scans static HTML before JS runs,
+    so this declaration is required for form registration.
+    The actual submission is handled via fetch() in the Angular component.
+  -->
+  <form name="appointment-enquiry" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input type="hidden" name="form-name" value="appointment-enquiry" />
+    <input name="bot-field" />
+    <input name="name" />
+    <input name="phone" />
+    <input name="email" />
+    <input name="service" />
+    <input name="date" />
+    <input name="time" />
+    <textarea name="details"></textarea>
+  </form>
+</body>
+</html>

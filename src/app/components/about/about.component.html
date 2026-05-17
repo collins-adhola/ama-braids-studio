@@ -1,0 +1,46 @@
+<section class="about">
+  <div class="container">
+    <div class="about-grid">
+
+      <div class="about-image-wrap" appScrollReveal>
+        <div class="image-frame">
+          <div class="corner corner-tl"></div>
+          <div class="corner corner-tr"></div>
+          <div class="corner corner-bl"></div>
+          <div class="corner corner-br"></div>
+          <img src="assets/images/portrait.jpeg" alt="AMA — Your Hair Artist" />
+        </div>
+        <div class="badge">
+          <span class="badge-rating">5★</span>
+          <span class="badge-label">Client Rated</span>
+        </div>
+      </div>
+
+      <div class="about-content">
+        <span class="section-label" appScrollReveal>About AMA Braids Studio</span>
+        <div class="gold-divider" appScrollReveal></div>
+        <h2 appScrollReveal>Where Craft Meets <em>Care</em></h2>
+        <p appScrollReveal>
+          AMA Braids Studio is a private, appointment-only braid service based in South West London.
+          Each appointment is one-to-one — giving you the time, care, and attention you deserve,
+          without the rush of a busy salon.
+        </p>
+        <p appScrollReveal>
+          With years of experience in all styles, from knotless braids to intricate cornrows,
+          I focus on healthy installs, neat parting, and creating a relaxed atmosphere where
+          clients feel truly cared for. Come relax while I do your hair.
+        </p>
+
+        <div class="pillars" appScrollReveal>
+          @for (pillar of pillars; track pillar.title) {
+            <div class="pillar">
+              <h4>{{ pillar.title }}</h4>
+              <p>{{ pillar.text }}</p>
+            </div>
+          }
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,172 @@
+.location {
+  background: var(--warm-dark);
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.map-panel {
+  height: 480px;
+  position: relative;
+  border: 1px solid rgba(201, 168, 76, 0.12);
+  overflow: hidden;
+  background: var(--black-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(201, 168, 76, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201, 168, 76, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.map-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.map-pin {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pin-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--gold);
+  position: relative;
+  z-index: 2;
+}
+
+.pin-pulse {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 168, 76, 0.4);
+  animation: pulse 2.5s ease infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.6); opacity: 0.8; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+.map-label {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: var(--white);
+  text-align: center;
+}
+
+.map-sublabel {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.location-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.areas {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid rgba(201, 168, 76, 0.1);
+}
+
+.area-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.08);
+  transition: background var(--transition-smooth);
+
+  &:last-child { border-bottom: none; }
+  &:hover { background: rgba(201, 168, 76, 0.03); }
+}
+
+.area-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+.area-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.area-name {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--white);
+}
+
+.area-postcodes {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--gold);
+  letter-spacing: 0.08em;
+}
+
+.area-note {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 248, 0.35);
+}
+
+.availability-note {
+  padding: 20px 24px;
+  border-left: 2px solid var(--gold);
+  background: rgba(201, 168, 76, 0.04);
+
+  p {
+    font-size: 0.87rem;
+    line-height: 1.8;
+    color: rgba(250, 250, 248, 0.65);
+  }
+}
+
+@media (max-width: 900px) {
+  .location-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .map-panel { height: 320px; }
+}

@@ -1,0 +1,23 @@
+<section class="testimonials">
+  <div class="container">
+    <div class="section-header" appScrollReveal>
+      <span class="section-label">Kind Words</span>
+      <div class="gold-divider"></div>
+      <h2>What <em>Clients Say</em></h2>
+    </div>
+
+    <div class="testimonials-grid">
+      @for (t of testimonials; track t.name) {
+        <div class="testimonial-card" appScrollReveal>
+          <div class="stars">★★★★★</div>
+          <div class="quote-mark">"</div>
+          <p class="testimonial-text">{{ t.text }}</p>
+          <div class="testimonial-author">
+            <span class="author-name">{{ t.name }}</span>
+            <span class="author-location">{{ t.location }}</span>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

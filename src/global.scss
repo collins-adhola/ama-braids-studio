@@ -1,0 +1,182 @@
+@import 'theme/variables';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--black);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.7;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+a, button { cursor: none; }
+
+// Scroll reveal
+[appScrollReveal] {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Layout
+section {
+  padding: 52px 0;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+// Typography
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  line-height: 1.1;
+  font-weight: 300;
+}
+
+h1 { font-size: clamp(3rem, 6vw, 5.5rem); }
+h2 { font-size: clamp(2rem, 4vw, 3.5rem); }
+h3 { font-size: clamp(1.1rem, 1.8vw, 1.5rem); }
+
+em { font-style: italic; color: var(--gold); }
+
+p { font-size: 0.95rem; line-height: 1.8; color: rgba(45, 27, 18, 0.7); }
+
+// Section labels
+.section-label {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.gold-divider {
+  width: 48px;
+  height: 1px;
+  background: var(--gold);
+  margin: 16px 0 28px;
+}
+
+// Buttons
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gold);
+  color: var(--black);
+  border: none;
+  padding: 14px 32px;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: none;
+  transition: background var(--transition-smooth), transform 0.2s ease;
+
+  &:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+  }
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--black);
+  border: 1px solid rgba(45, 27, 18, 0.3);
+  padding: 14px 32px;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: none;
+  transition: border-color var(--transition-smooth), color var(--transition-smooth);
+
+  &:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+}
+
+.btn-gold-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  padding: 14px 32px;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: none;
+  transition: background var(--transition-smooth), color var(--transition-smooth);
+
+  &:hover {
+    background: var(--gold);
+    color: var(--black);
+  }
+}
+
+// Image placeholders
+.img-placeholder {
+  background: var(--black-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(201, 168, 76, 0.3);
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+// Ionic overrides
+ion-app {
+  background: var(--black);
+}
+
+// Mobile
+@media (max-width: 768px) {
+  .container { padding: 0 20px; }
+  section { padding: 40px 0; }
+}
+
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+}
+
+// Hide cursor on touch devices
+@media (hover: none) {
+  body, a, button { cursor: auto; }
+}

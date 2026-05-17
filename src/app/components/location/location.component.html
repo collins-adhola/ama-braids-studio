@@ -1,0 +1,53 @@
+<section class="location">
+  <div class="container">
+    <div class="location-grid">
+
+      <div class="map-panel" appScrollReveal>
+        <div class="map-grid"></div>
+        <div class="map-content">
+          <div class="map-pin">
+            <div class="pin-dot"></div>
+            <div class="pin-pulse"></div>
+          </div>
+          <span class="map-label">SW London</span>
+          <span class="map-sublabel">Studio &amp; Home Visits</span>
+        </div>
+      </div>
+
+      <div class="location-info">
+        <span class="section-label" appScrollReveal>Where to Find Us</span>
+        <div class="gold-divider" appScrollReveal></div>
+        <div class="areas" appScrollReveal>
+          @for (area of areas; track area.name) {
+            <div class="area-row">
+              <div class="area-dot"></div>
+              <div class="area-info">
+                <span class="area-name">{{ area.name }}</span>
+                <span class="area-postcodes">{{ area.postcodes }}</span>
+              </div>
+              <span class="area-note">{{ area.note }}</span>
+            </div>
+          }
+        </div>
+
+        <div class="availability-note" appScrollReveal>
+          <p>
+            Studio appointments in Battersea &amp; Clapham, or I can come to you
+            across SW London — Fulham, Chelsea, Richmond, Balham, and more.<br />
+            By appointment only. Evenings and weekends. Book 5–7 days ahead.
+          </p>
+        </div>
+
+        <div class="location-links" appScrollReveal>
+          <a
+            href="https://www.google.com/maps/search/Battersea+SW8+London"
+            target="_blank"
+            rel="noopener"
+            class="btn-gold-ghost"
+          >View on Google Maps</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
