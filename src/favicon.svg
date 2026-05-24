@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3D2015"/>
+      <stop offset="100%" stop-color="#1C0C04"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100" height="100" fill="url(#bg)"/>
+
+  <!-- Thin gold border -->
+  <rect x="3.5" y="3.5" width="93" height="93" fill="none" stroke="#C49A5A" stroke-width="1.5" stroke-opacity="0.45"/>
+
+  <!-- Italic serif A -->
+  <text
+    x="52"
+    y="76"
+    font-family="'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif"
+    font-size="80"
+    font-style="italic"
+    font-weight="400"
+    fill="#C49A5A"
+    text-anchor="middle"
+  >A</text>
+</svg>
