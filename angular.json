@@ -37,6 +37,21 @@
                 "glob": "favicon.svg",
                 "input": "src",
                 "output": "/"
+              },
+              {
+                "glob": "favicon.ico",
+                "input": "src",
+                "output": "/"
+              },
+              {
+                "glob": "favicon-192.png",
+                "input": "src",
+                "output": "/"
+              },
+              {
+                "glob": "apple-touch-icon.png",
+                "input": "src",
+                "output": "/"
               }
             ],
             "styles": [
