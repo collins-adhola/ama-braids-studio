@@ -11,8 +11,8 @@ import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive'
 export class InstagramFeedComponent {
   previews = [
     { url: 'assets/images/extensions/extension-braid-14.jpeg', alt: 'Extension braids' },
-    { url: 'assets/images/cornrows/gallery-braid-3.jpeg', alt: 'Cornrow style' },
-    { url: 'assets/images/kids-braids/kids-braids-3.jpeg', alt: 'Kids braids' },
+    { url: 'assets/images/cornrows/gallery-braid-2.jpeg', alt: 'Cornrow style' },
+    { url: 'assets/images/kids-braids/kids-braids-1.jpeg', alt: 'Kids braids' },
   ];
 
   openInstagram(): void {

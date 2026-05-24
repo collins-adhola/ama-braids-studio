@@ -4,13 +4,13 @@
 }
 
 .footer-main {
-  padding: 48px 0 36px;
+  padding: 36px 0 24px;
 }
 
 .footer-grid {
   display: grid;
   grid-template-columns: 1.6fr 1fr 1.4fr;
-  gap: 48px;
+  gap: 36px;
 }
 
 .footer-brand {
@@ -101,7 +101,7 @@
 .footer-contact {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 14px;
 
   h5 {
     font-family: var(--font-sans);
@@ -194,7 +194,7 @@
 @media (max-width: 900px) {
   .footer-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    gap: 28px;
   }
 
   .footer-brand {

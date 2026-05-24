@@ -37,7 +37,7 @@ a, button { cursor: pointer; }
 
 // Layout
 section {
-  padding: 52px 0;
+  padding: 44px 0;
 }
 
 .container {
@@ -169,7 +169,7 @@ ion-app {
 // Mobile
 @media (max-width: 768px) {
   .container { padding: 0 20px; }
-  section { padding: 40px 0; }
+  section { padding: 32px 0; }
 }
 
 @media (max-width: 480px) {

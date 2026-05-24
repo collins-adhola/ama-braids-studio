@@ -1,8 +1,8 @@
 .hero {
-  min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   padding-top: 80px;
+  padding-bottom: 80px;
   background: var(--cream);
   position: relative;
   overflow: hidden;
