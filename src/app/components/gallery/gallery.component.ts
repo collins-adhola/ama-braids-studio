@@ -27,6 +27,7 @@ export class GalleryComponent {
   constructor(private modal: EnquiryModalService) {}
 
   modalOpen = false;
+  activeCategory: string | null = null;
 
   categories: CategoryCard[] = [
     {
@@ -60,35 +61,47 @@ export class GalleryComponent {
   ];
 
   allImages: GalleryImage[] = [
-    { url: 'assets/images/extensions/extension-braid-13.jpeg', category: 'Extensions', alt: 'Knotless braids' },
-    { url: 'assets/images/cornrows/gallery-braid-1.jpeg', category: 'Cornrows', alt: 'Feed-in cornrows' },
-    { url: 'assets/images/kids-braids/kids-braids-1.jpeg', category: 'Kids', alt: 'Kids braids' },
-    { url: 'assets/images/unisex-braids/unisex-braids1.jpg', category: 'Unisex', alt: "Men's braids" },
-    { url: 'assets/images/extensions/extension-braid-14.jpeg', category: 'Extensions', alt: 'Box braids' },
-    { url: 'assets/images/cornrows/gallery-braid-2.jpeg', category: 'Cornrows', alt: 'Stitch braids' },
-    { url: 'assets/images/extensions/extension-braid-15.jpeg', category: 'Extensions', alt: 'Large knotless braids' },
-    { url: 'assets/images/kids-braids/kids-braids-2.jpeg', category: 'Kids', alt: 'Kids cornrows' },
-    { url: 'assets/images/cornrows/gallery-braid-3.jpeg', category: 'Cornrows', alt: 'Ghana braids' },
-    { url: 'assets/images/unisex-braids/unisex-braids2.jpg', category: 'Unisex', alt: 'Unisex style' },
-    { url: 'assets/images/extensions/extension-braid-16.jpeg', category: 'Extensions', alt: 'Goddess braids' },
-    { url: 'assets/images/cornrows/gallery-braid-4.jpeg', category: 'Cornrows', alt: 'Cornrow pattern' },
-    { url: 'assets/images/kids-braids/kids-braids-3.jpeg', category: 'Kids', alt: 'Kids style' },
-    { url: 'assets/images/extensions/extension-braid-17.jpeg', category: 'Extensions', alt: 'Jumbo braids' },
-    { url: 'assets/images/cornrows/gallery-braid-5.jpeg', category: 'Cornrows', alt: 'Cornrows close-up' },
-    { url: 'assets/images/unisex-braids/unisex-braids3.jpg', category: 'Unisex', alt: 'Unisex cornrows' },
-    { url: 'assets/images/extensions/extension-braid-19.jpeg', category: 'Extensions', alt: 'Twist braids' },
-    { url: 'assets/images/kids-braids/kids-braids-4.jpeg', category: 'Kids', alt: 'Kids braided style' },
-    { url: 'assets/images/cornrows/gallery-braid-6.jpeg', category: 'Cornrows', alt: 'Sculpted cornrows' },
-    { url: 'assets/images/extensions/extension-braid-21.jpeg', category: 'Extensions', alt: 'Extension braids' },
-    { url: 'assets/images/kids-braids/kids-braids-5.jpeg', category: 'Kids', alt: 'Kids knotless' },
-    { url: 'assets/images/extensions/extension-braid-22.jpeg', category: 'Extensions', alt: 'Braided style' },
-    { url: 'assets/images/cornrows/gallery-braid-7.jpeg', category: 'Cornrows', alt: 'Cornrow detail' },
-    { url: 'assets/images/kids-braids/kids-braids-6.jpeg', category: 'Kids', alt: 'Kids protective style' },
+    { url: 'assets/images/cornrows/gallery-braid-12.jpeg', category: 'cornrows', alt: 'Cornrow updo' },
+    { url: 'assets/images/cornrows/gallery-braid-13.jpeg', category: 'cornrows', alt: 'Cornrow pattern' },
+    { url: 'assets/images/cornrows/gallery-braid-15.jpeg', category: 'cornrows', alt: 'Cornrow style' },
+    { url: 'assets/images/cornrows/gallery-braid-2.jpeg',  category: 'cornrows', alt: 'Stitch braids' },
+    { url: 'assets/images/cornrows/gallery-braid-4.jpeg',  category: 'cornrows', alt: 'Cornrow detail' },
+    { url: 'assets/images/extensions/extension-braid-13.jpeg', category: 'extensions', alt: 'Knotless braids' },
+    { url: 'assets/images/extensions/extension-braid-14.jpeg', category: 'extensions', alt: 'Box braids' },
+    { url: 'assets/images/extensions/extension-braid-21.jpeg', category: 'extensions', alt: 'Extension braids' },
+    { url: 'assets/images/extensions/extension-braid-24.jpeg', category: 'extensions', alt: 'Long knotless' },
+    { url: 'assets/images/extensions/extension-braid-25.jpeg', category: 'extensions', alt: 'Braided style' },
+    { url: 'assets/images/kids-braids/kids-braids-1.jpeg',  category: 'kids', alt: 'Kids braids' },
+    { url: 'assets/images/kids-braids/kids-braids-4.jpeg',  category: 'kids', alt: 'Kids cornrows' },
+    { url: 'assets/images/kids-braids/kids-braids-6.jpeg',  category: 'kids', alt: 'Kids protective style' },
+    { url: 'assets/images/kids-braids/kids-braids-10.jpeg', category: 'kids', alt: 'Kids braided style' },
+    { url: 'assets/images/kids-braids/kids-braids-11.jpeg', category: 'kids', alt: 'Kids knotless' },
+    { url: 'assets/images/kids-braids/kids-braids-17.jpeg', category: 'kids', alt: 'Kids style' },
+    { url: 'assets/images/kids-braids/kids-braids-18.jpeg', category: 'kids', alt: 'Kids updo' },
+    { url: 'assets/images/unisex-braids/unisex-braids1.jpg',  category: 'unisex', alt: "Men's braids" },
+    { url: 'assets/images/unisex-braids/unisex-braids2.jpg',  category: 'unisex', alt: 'Unisex style' },
+    { url: 'assets/images/unisex-braids/unisex-braids3.jpg',  category: 'unisex', alt: 'Unisex cornrows' },
+    { url: 'assets/images/unisex-braids/unisex-braids5.avif', category: 'unisex', alt: 'Unisex cornrow pattern' },
   ];
 
-  openModal(): void {
+  get modalTitle(): string {
+    if (!this.activeCategory) return 'Style Gallery';
+    return this.categories.find(c => c.id === this.activeCategory)?.title ?? 'Style Gallery';
+  }
+
+  get visibleImages(): GalleryImage[] {
+    if (!this.activeCategory) return this.allImages;
+    return this.allImages.filter(img => img.category === this.activeCategory);
+  }
+
+  openModal(categoryId?: string): void {
+    this.activeCategory = categoryId ?? null;
     this.modalOpen = true;
     document.body.style.overflow = 'hidden';
+  }
+
+  setFilter(categoryId: string | null): void {
+    this.activeCategory = categoryId;
   }
 
   closeModal(): void {

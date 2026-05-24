@@ -30,14 +30,16 @@
   overflow: hidden;
   background: var(--white);
   border: 1px solid transparent;
+  cursor: pointer;
   transition: border-color 0.35s ease, transform 0.35s ease;
 
   &:hover {
-    border-color: rgba(196, 154, 90, 0.25);
+    border-color: rgba(196, 154, 90, 0.45);
     transform: translateY(-5px);
 
-    .image-overlay { opacity: 0.12; }
+    .image-overlay { opacity: 1; }
     .card-image img { transform: scale(1.05); }
+    .overlay-cta { opacity: 1; transform: translateY(0); }
   }
 }
 
@@ -58,10 +60,27 @@
 .image-overlay {
   position: absolute;
   inset: 0;
-  background: var(--espresso);
+  background: rgba(18, 11, 6, 0.52);
   opacity: 0;
   transition: opacity 0.35s ease;
   pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay-cta {
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  padding: 9px 20px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .card-body {
@@ -132,6 +151,7 @@
 }
 
 // -------  Modal  -------
+
 .modal-backdrop {
   position: fixed;
   inset: 0;
@@ -195,6 +215,40 @@
   transition: color 0.2s ease;
 
   &:hover { color: var(--gold); }
+}
+
+.modal-filters {
+  display: flex;
+  gap: 8px;
+  padding: 14px 28px;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.08);
+  flex-shrink: 0;
+  overflow-x: auto;
+}
+
+.filter-pill {
+  background: transparent;
+  border: 1px solid rgba(250, 250, 248, 0.12);
+  color: rgba(250, 250, 248, 0.45);
+  font-family: var(--font-sans);
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    border-color: rgba(201, 168, 76, 0.4);
+    color: rgba(250, 250, 248, 0.75);
+  }
+
+  &.active {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
 }
 
 .modal-grid {
@@ -269,6 +323,7 @@
 @media (max-width: 580px) {
   .category-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
   .card-image { aspect-ratio: 3 / 4; }
+  .modal-filters { padding: 10px 16px; }
   .modal-grid { grid-template-columns: repeat(2, 1fr); }
   .modal-footer { flex-direction: column; text-align: center; gap: 12px; }
   .modal-note { display: none; }
