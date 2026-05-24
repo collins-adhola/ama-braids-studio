@@ -9,12 +9,21 @@
     <div class="testimonials-grid">
       @for (t of testimonials; track t.name) {
         <div class="testimonial-card" appScrollReveal>
+          <div class="author-thumb">
+            @if (t.avatar) {
+              <img [src]="t.avatar" [alt]="t.name" />
+            } @else {
+              <span>{{ t.initials }}</span>
+            }
+          </div>
           <div class="stars">★★★★★</div>
           <div class="quote-mark">"</div>
           <p class="testimonial-text">{{ t.text }}</p>
           <div class="testimonial-author">
-            <span class="author-name">{{ t.name }}</span>
-            <span class="author-location">{{ t.location }}</span>
+            <div class="author-info">
+              <span class="author-name">{{ t.name }}</span>
+              <span class="author-location">{{ t.role }}</span>
+            </div>
           </div>
         </div>
       }
