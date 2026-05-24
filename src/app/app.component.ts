@@ -9,7 +9,6 @@ import { TestimonialsComponent } from './components/testimonials/testimonials.co
 import { InstagramFeedComponent } from './components/instagram-feed/instagram-feed.component';
 import { BookingComponent } from './components/booking/booking.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { CustomCursorComponent } from './components/custom-cursor/custom-cursor.component';
 import { EnquiryModalComponent } from './components/enquiry-modal/enquiry-modal.component';
 
 @Component({
@@ -25,7 +24,6 @@ import { EnquiryModalComponent } from './components/enquiry-modal/enquiry-modal.
     InstagramFeedComponent,
     BookingComponent,
     FooterComponent,
-    CustomCursorComponent,
     EnquiryModalComponent,
   ],
   templateUrl: './app.component.html',

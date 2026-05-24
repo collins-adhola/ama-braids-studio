@@ -1,6 +1,5 @@
 import { Component, HostListener } from '@angular/core';
 import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
-import { WhatsappService } from '../../services/whatsapp.service';
 import { EnquiryModalService } from '../../services/enquiry-modal.service';
 
 interface CategoryCard {
@@ -25,10 +24,7 @@ interface GalleryImage {
   styleUrls: ['./gallery.component.scss'],
 })
 export class GalleryComponent {
-  constructor(
-    private whatsapp: WhatsappService,
-    private modal: EnquiryModalService,
-  ) {}
+  constructor(private modal: EnquiryModalService) {}
 
   modalOpen = false;
 
@@ -37,7 +33,7 @@ export class GalleryComponent {
       id: 'cornrows',
       title: 'Cornrows',
       description: 'Precision scalp braids using your natural hair. Clean, sharp, and beautifully defined.',
-      imageUrl: 'assets/images/cornrows/gallery-braid-1.jpeg',
+      imageUrl: 'assets/images/cornrows/gallery-braid-12.jpeg',
       tags: ['Scalp Friendly', 'Natural Hair', 'No Extensions Required'],
     },
     {
@@ -51,14 +47,14 @@ export class GalleryComponent {
       id: 'kids',
       title: 'Kids',
       description: 'Gentle styles for little ones, installed with patience and care in a calm environment.',
-      imageUrl: 'assets/images/kids-braids/kids-braids-1.jpeg',
+      imageUrl: 'assets/images/kids-braids/kids-braids-6.jpeg',
       tags: ['Child Friendly', '1-to-1 Appointment', 'Healthy Install'],
     },
     {
       id: 'unisex',
       title: 'Unisex',
       description: 'Clean cornrows and scalp styles for all. Neat lines, natural finish, modern aesthetic.',
-      imageUrl: 'assets/images/unisex-braids/unisex-braids1.jpg',
+      imageUrl: 'assets/images/unisex-braids/unisex-braids3.jpg',
       tags: ['All Hair Types', 'Natural Finish', 'Scalp Friendly'],
     },
   ];

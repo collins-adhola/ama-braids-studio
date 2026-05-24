@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { TitleCasePipe } from '@angular/common';
 import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
-import { WhatsappService } from '../../services/whatsapp.service';
 import { EnquiryModalService } from '../../services/enquiry-modal.service';
 
 interface StyleItem {
@@ -26,10 +25,7 @@ interface StyleItem {
   styleUrls: ['./style-selector.component.scss'],
 })
 export class StyleSelectorComponent {
-  constructor(
-    private whatsapp: WhatsappService,
-    private modal: EnquiryModalService,
-  ) {}
+  constructor(private modal: EnquiryModalService) {}
 
   activeFilter = 'all';
   selectedStyle: StyleItem | null = null;
@@ -89,7 +85,7 @@ export class StyleSelectorComponent {
       id: 7, name: 'Feed-In Cornrows', categories: ['cornrows'],
       description: 'Neat scalp braids with added hair for fullness and length. Clean and versatile.',
       price: 'From £100', duration: '3–5 hrs', hairType: 'Natural + Extensions',
-      imageUrl: 'assets/images/cornrows/gallery-braid-1.jpeg',
+      imageUrl: 'assets/images/cornrows/gallery-braid-12.jpeg',
       isUnisex: true, visible: true, selected: false,
     },
     {
@@ -103,7 +99,7 @@ export class StyleSelectorComponent {
       id: 9, name: 'Ghana Braids', categories: ['cornrows'],
       description: 'Raised, thick cornrows in curved or straight patterns with a bold, sculptural look.',
       price: 'From £90', duration: '3–5 hrs', hairType: 'Natural + Extensions',
-      imageUrl: 'assets/images/cornrows/gallery-braid-3.jpeg',
+      imageUrl: 'assets/images/cornrows/gallery-braid-12.jpeg',
       isUnisex: false, visible: true, selected: false,
     },
     {

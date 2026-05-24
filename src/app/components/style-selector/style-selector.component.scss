@@ -33,7 +33,7 @@
   border: 1px solid rgba(201, 168, 76, 0.3);
   background: transparent;
   color: rgba(250, 250, 248, 0.6);
-  cursor: none;
+  cursor: pointer;
   transition: all var(--transition-smooth);
 
   &.active, &:hover {
@@ -52,7 +52,7 @@
 
 .style-card {
   border: 1px solid rgba(201, 168, 76, 0.1);
-  cursor: none;
+  cursor: pointer;
   transition: border-color var(--transition-smooth), transform 0.2s ease;
   overflow: hidden;
 
