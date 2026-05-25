@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://amahairstudio.com/assets/sitemap.xml
