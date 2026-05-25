@@ -1,0 +1,538 @@
+// ─── HERO ─────────────────────────────────────────────────────────────────────
+
+.lp-hero {
+  background: var(--cream);
+  padding-top: 80px;
+  padding-bottom: 0;
+  overflow: hidden;
+}
+
+.lp-hero-grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px 48px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.lp-hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  animation: lpFadeUp 0.8s ease both;
+}
+
+.lp-hero-sub {
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: rgba(45, 27, 18, 0.7);
+  max-width: 440px;
+  margin: 0;
+  animation: lpFadeUp 0.8s 0.15s ease both;
+}
+
+.lp-hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  animation: lpFadeUp 0.8s 0.25s ease both;
+}
+
+.lp-hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-top: 8px;
+  animation: lpFadeUp 0.8s 0.35s ease both;
+}
+
+.lp-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.lp-stat-value {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--gold);
+}
+
+.lp-stat-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(45, 27, 18, 0.5);
+}
+
+.lp-stat-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(196, 154, 90, 0.2);
+}
+
+.lp-hero-image {
+  position: relative;
+  height: 680px;
+  animation: lpFadeUp 0.9s 0.1s ease both;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+  }
+}
+
+.lp-hero-image-frame {
+  position: absolute;
+  top: 16px;
+  left: -16px;
+  right: 16px;
+  bottom: -16px;
+  border: 1px solid rgba(196, 154, 90, 0.2);
+  pointer-events: none;
+}
+
+@keyframes lpFadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+// ─── INTRO ────────────────────────────────────────────────────────────────────
+
+.lp-intro {
+  background: var(--cream);
+  padding: 64px 0;
+}
+
+.lp-intro-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+
+  .gold-divider {
+    margin: 16px auto 28px;
+  }
+}
+
+.lp-intro-copy {
+  font-family: var(--font-serif);
+  font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(45, 27, 18, 0.8);
+  font-style: italic;
+}
+
+// ─── GALLERY ──────────────────────────────────────────────────────────────────
+
+.lp-gallery {
+  background: rgba(247, 241, 234, 0.5);
+  border-top: 1px solid rgba(196, 154, 90, 0.08);
+  border-bottom: 1px solid rgba(196, 154, 90, 0.08);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+
+  .gold-divider { margin: 16px auto 28px; }
+}
+
+.section-sub {
+  font-size: 0.9rem;
+  color: rgba(45, 27, 18, 0.55);
+  max-width: 500px;
+  margin: 12px auto 0;
+  line-height: 1.8;
+}
+
+.lp-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.lp-gallery-tile {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: var(--black-mid);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.5s ease;
+
+    &.loaded { opacity: 1; }
+  }
+
+  &:hover img {
+    transform: scale(1.03);
+  }
+}
+
+// ─── BENEFITS ─────────────────────────────────────────────────────────────────
+
+.lp-benefits {
+  background: var(--cream);
+}
+
+.lp-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 8px;
+}
+
+.lp-benefit-card {
+  padding: 32px 28px;
+  border: 1px solid rgba(196, 154, 90, 0.12);
+  background: rgba(255, 255, 255, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+
+  &:hover {
+    border-color: rgba(196, 154, 90, 0.3);
+    box-shadow: 0 8px 32px rgba(196, 154, 90, 0.06);
+  }
+}
+
+.lp-benefit-icon {
+  color: var(--gold);
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+}
+
+.lp-benefit-card h4 {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--black);
+}
+
+.lp-benefit-card p {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: rgba(45, 27, 18, 0.65);
+  margin: 0;
+}
+
+// ─── THE AMA EXPERIENCE ───────────────────────────────────────────────────────
+
+.lp-experience {
+  background: var(--warm-dark);
+  border-top: 1px solid rgba(196, 154, 90, 0.08);
+}
+
+.lp-experience-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 72px;
+  align-items: start;
+}
+
+.lp-experience-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  h2 {
+    color: var(--white);
+    margin-bottom: 4px;
+
+    em { color: var(--gold); }
+  }
+
+  p {
+    color: rgba(250, 250, 248, 0.65);
+    font-size: 0.92rem;
+    line-height: 1.9;
+    margin: 0;
+  }
+}
+
+.section-label--light {
+  color: rgba(196, 154, 90, 0.8);
+}
+
+.lp-experience-pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-top: 8px;
+}
+
+.lp-experience-pillar {
+  padding: 24px 0 24px 20px;
+  border-left: 2px solid rgba(196, 154, 90, 0.25);
+  border-bottom: 1px solid rgba(196, 154, 90, 0.06);
+
+  &:last-child { border-bottom: none; }
+
+  &:hover {
+    border-left-color: var(--gold);
+  }
+
+  h4 {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: rgba(250, 250, 248, 0.55);
+    margin: 0;
+  }
+}
+
+// ─── FAQ ──────────────────────────────────────────────────────────────────────
+
+.lp-faq {
+  background: var(--cream);
+}
+
+.lp-faq-list {
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.lp-faq-item {
+  border-bottom: 1px solid rgba(196, 154, 90, 0.12);
+
+  &:first-child { border-top: 1px solid rgba(196, 154, 90, 0.12); }
+
+  &.open .lp-faq-chevron {
+    transform: rotate(180deg);
+  }
+
+  &.open .lp-faq-body {
+    grid-template-rows: 1fr;
+  }
+}
+
+.lp-faq-trigger {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 22px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+  text-align: left;
+
+  span {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--black);
+    line-height: 1.3;
+  }
+}
+
+.lp-faq-chevron {
+  color: var(--gold);
+  font-size: 1rem;
+  flex-shrink: 0;
+  transition: transform 0.35s ease;
+}
+
+.lp-faq-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+
+.lp-faq-body-inner {
+  overflow: hidden;
+
+  p {
+    padding-bottom: 22px;
+    font-size: 0.88rem;
+    line-height: 1.85;
+    color: rgba(45, 27, 18, 0.65);
+    margin: 0;
+  }
+}
+
+// ─── SERVICE AREAS ────────────────────────────────────────────────────────────
+
+.lp-areas {
+  background: rgba(247, 241, 234, 0.6);
+  border-top: 1px solid rgba(196, 154, 90, 0.08);
+  border-bottom: 1px solid rgba(196, 154, 90, 0.08);
+  padding: 56px 0;
+}
+
+.lp-areas-inner {
+  max-width: 560px;
+
+  .gold-divider { margin: 16px 0 28px; }
+
+  h3 { margin-bottom: 24px; }
+}
+
+.lp-areas-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 0;
+  margin-bottom: 24px;
+
+  li {
+    font-size: 0.85rem;
+    color: rgba(45, 27, 18, 0.65);
+    width: 50%;
+    padding-left: 16px;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 1px;
+      background: var(--gold);
+    }
+  }
+}
+
+.lp-areas-note {
+  font-size: 0.8rem;
+  color: rgba(45, 27, 18, 0.45);
+  font-style: italic;
+  margin: 0;
+}
+
+// ─── FINAL CTA ────────────────────────────────────────────────────────────────
+
+.lp-cta {
+  background: var(--warm-dark);
+  padding: 80px 0;
+}
+
+.lp-cta-inner {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+
+  .gold-divider { margin: 16px auto 28px; }
+
+  h2 {
+    color: var(--white);
+    margin-bottom: 16px;
+
+    em { color: var(--gold); }
+  }
+}
+
+.lp-cta-sub {
+  font-size: 0.9rem;
+  color: rgba(250, 250, 248, 0.55);
+  max-width: 420px;
+  margin: 0 auto 36px;
+  line-height: 1.8;
+}
+
+.lp-cta-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.lp-whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: rgba(250, 250, 248, 0.7);
+  border: 1px solid rgba(250, 250, 248, 0.2);
+  padding: 14px 28px;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color var(--transition-smooth), color var(--transition-smooth);
+
+  ion-icon { font-size: 1rem; }
+
+  &:hover {
+    border-color: rgba(250, 250, 248, 0.5);
+    color: var(--white);
+  }
+}
+
+// ─── RESPONSIVE ───────────────────────────────────────────────────────────────
+
+@media (max-width: 1024px) {
+  .lp-benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .lp-hero-grid {
+    grid-template-columns: 1fr;
+    padding: 40px 20px 0;
+    gap: 40px;
+  }
+
+  .lp-hero-image {
+    height: 460px;
+    order: -1;
+  }
+
+  .lp-experience-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .lp-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .lp-hero-stats { gap: 16px; }
+
+  .lp-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lp-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .lp-areas-list li { width: 100%; }
+
+  .lp-cta-actions { flex-direction: column; align-items: center; }
+}

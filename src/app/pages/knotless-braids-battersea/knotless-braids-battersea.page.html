@@ -1,0 +1,245 @@
+<main class="lp">
+
+  <!-- ─── HERO ─────────────────────────────────────────────── -->
+  <section class="lp-hero">
+    <div class="lp-hero-grid">
+
+      <div class="lp-hero-text">
+        <span class="section-label">Knotless Braids · Battersea</span>
+        <div class="gold-divider"></div>
+        <h1>Knotless Braids<br><em>in Battersea</em></h1>
+        <p class="lp-hero-sub">
+          Luxury private braid appointments for clients across Battersea,
+          Clapham, Fulham, and South West London.
+        </p>
+        <div class="lp-hero-actions">
+          <button class="btn-gold" (click)="openEnquiry()">Request Appointment</button>
+          <button class="btn-ghost" (click)="scrollToGallery()">View Style Gallery</button>
+        </div>
+        <div class="lp-hero-stats">
+          <div class="lp-stat">
+            <span class="lp-stat-value">6–8 wks</span>
+            <span class="lp-stat-label">Style Longevity</span>
+          </div>
+          <div class="lp-stat-divider"></div>
+          <div class="lp-stat">
+            <span class="lp-stat-value">5★</span>
+            <span class="lp-stat-label">Client Rated</span>
+          </div>
+          <div class="lp-stat-divider"></div>
+          <div class="lp-stat">
+            <span class="lp-stat-value">1-to-1</span>
+            <span class="lp-stat-label">Private Studio</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="lp-hero-image">
+        <img
+          src="assets/images/extensions/extension-braid-13.jpeg"
+          alt="Knotless braids installation — AMA Hair Studio Battersea"
+          loading="eager"
+          decoding="async"
+        />
+        <div class="lp-hero-image-frame"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── INTRODUCTION ─────────────────────────────────────── -->
+  <section class="lp-intro">
+    <div class="container">
+      <div class="lp-intro-inner" appScrollReveal>
+        <span class="section-label">The Studio</span>
+        <div class="gold-divider"></div>
+        <p class="lp-intro-copy">
+          AMA Hair Studio offers calm, one-to-one knotless braid appointments
+          in a relaxed South West London studio — focused on comfort, healthy
+          installs, and results that last. No double bookings, no salon rush.
+          Just your hair, given the full attention it deserves.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── GALLERY ───────────────────────────────────────────── -->
+  <section class="lp-gallery" id="knotless-gallery">
+    <div class="container">
+
+      <div class="section-header" appScrollReveal>
+        <span class="section-label">Style Gallery</span>
+        <div class="gold-divider"></div>
+        <h2>Knotless Braid <em>Styles</em></h2>
+        <p class="section-sub">
+          A curated selection of knotless installs — each one completed
+          privately, with care and precision.
+        </p>
+      </div>
+
+      <div class="lp-gallery-grid">
+        @for (img of galleryImages; track img.url) {
+          <div class="lp-gallery-tile" appScrollReveal>
+            <img
+              [src]="img.url"
+              [alt]="img.alt"
+              [appLazyLoad]="true"
+              decoding="async"
+            />
+          </div>
+        }
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── BENEFITS ─────────────────────────────────────────── -->
+  <section class="lp-benefits">
+    <div class="container">
+
+      <div class="section-header" appScrollReveal>
+        <span class="section-label">Why Knotless</span>
+        <div class="gold-divider"></div>
+        <h2>Why Clients Choose <em>Knotless Braids</em></h2>
+      </div>
+
+      <div class="lp-benefits-grid">
+        @for (benefit of benefits; track benefit.title) {
+          <div class="lp-benefit-card" appScrollReveal>
+            <div class="lp-benefit-icon">
+              <ion-icon [name]="benefit.icon"></ion-icon>
+            </div>
+            <h4>{{ benefit.title }}</h4>
+            <p>{{ benefit.body }}</p>
+          </div>
+        }
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── THE AMA EXPERIENCE ───────────────────────────────── -->
+  <section class="lp-experience">
+    <div class="container">
+      <div class="lp-experience-inner">
+
+        <div class="lp-experience-text" appScrollReveal>
+          <span class="section-label section-label--light">The AMA Difference</span>
+          <div class="gold-divider"></div>
+          <h2>A Studio Experience<br><em>Built Around You</em></h2>
+          <p>
+            Appointments are private, unhurried, and tailored individually to
+            each client — without the chaos of a busy salon or the pressure of
+            back-to-back bookings.
+          </p>
+          <p>
+            From the moment you arrive, the focus is entirely on your hair,
+            your comfort, and the result you're after. Every part and every
+            braid is done with the same level of care and attention to detail.
+          </p>
+          <button class="btn-gold-ghost" (click)="openEnquiry()">
+            Request Your Appointment
+          </button>
+        </div>
+
+        <div class="lp-experience-pillars" appScrollReveal>
+          <div class="lp-experience-pillar">
+            <h4>Private Studio</h4>
+            <p>One client at a time, always. Your appointment belongs entirely to you.</p>
+          </div>
+          <div class="lp-experience-pillar">
+            <h4>Healthy-First Technique</h4>
+            <p>Every install prioritises the long-term health of your natural hair and scalp.</p>
+          </div>
+          <div class="lp-experience-pillar">
+            <h4>Relaxed Pace</h4>
+            <p>No rushing. Knotless braids take time — and every minute of that time is given properly.</p>
+          </div>
+          <div class="lp-experience-pillar">
+            <h4>Precision Parting</h4>
+            <p>Clean, consistent parts are the foundation of every style. It shows in the finish.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ───────────────────────────────────────────────── -->
+  <section class="lp-faq">
+    <div class="container">
+
+      <div class="section-header" appScrollReveal>
+        <span class="section-label">Questions</span>
+        <div class="gold-divider"></div>
+        <h2>Frequently Asked <em>Questions</em></h2>
+      </div>
+
+      <div class="lp-faq-list">
+        @for (faq of faqs; track faq.question; let i = $index) {
+          <div class="lp-faq-item" [class.open]="faq.open" appScrollReveal>
+            <button class="lp-faq-trigger" (click)="toggleFaq(i)" [attr.aria-expanded]="faq.open">
+              <span>{{ faq.question }}</span>
+              <ion-icon name="chevron-down-outline" class="lp-faq-chevron"></ion-icon>
+            </button>
+            <div class="lp-faq-body">
+              <div class="lp-faq-body-inner">
+                <p>{{ faq.answer }}</p>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── SERVICE AREAS ─────────────────────────────────────── -->
+  <section class="lp-areas">
+    <div class="container">
+      <div class="lp-areas-inner" appScrollReveal>
+        <span class="section-label">Serving</span>
+        <div class="gold-divider"></div>
+        <h3>South West London <em>&amp; Beyond</em></h3>
+        <ul class="lp-areas-list">
+          <li>Battersea</li>
+          <li>Clapham</li>
+          <li>Fulham</li>
+          <li>Wandsworth</li>
+          <li>Chelsea</li>
+          <li>Balham</li>
+          <li>Richmond</li>
+          <li>South West London</li>
+        </ul>
+        <p class="lp-areas-note">
+          Studio and home visits available by arrangement.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FINAL CTA ─────────────────────────────────────────── -->
+  <section class="lp-cta">
+    <div class="container">
+      <div class="lp-cta-inner" appScrollReveal>
+        <span class="section-label section-label--light">Get Started</span>
+        <div class="gold-divider"></div>
+        <h2>Request Your <em>Appointment</em></h2>
+        <p class="lp-cta-sub">
+          Private braid appointments tailored with care, comfort, and
+          attention to detail.
+        </p>
+        <div class="lp-cta-actions">
+          <button class="btn-gold" (click)="openEnquiry()">Request Appointment</button>
+          <button class="lp-whatsapp-btn" (click)="openWhatsApp()">
+            <ion-icon name="logo-whatsapp"></ion-icon>
+            WhatsApp AMA
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <app-footer></app-footer>
+
+</main>

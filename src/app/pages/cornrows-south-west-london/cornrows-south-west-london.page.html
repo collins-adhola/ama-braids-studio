@@ -1,0 +1,246 @@
+<main class="lp">
+
+  <!-- ─── HERO ─────────────────────────────────────────────── -->
+  <section class="lp-hero">
+    <div class="lp-hero-grid">
+
+      <div class="lp-hero-text">
+        <span class="section-label">Cornrows · South West London</span>
+        <div class="gold-divider"></div>
+        <h1>Cornrows in<br><em>South West London</em></h1>
+        <p class="lp-hero-sub">
+          Precision stitch braids, feed-ins, and scalp cornrows — installed with
+          care in a calm private studio across Battersea, Clapham, and South West
+          London.
+        </p>
+        <div class="lp-hero-actions">
+          <button class="btn-gold" (click)="openEnquiry()">Request Appointment</button>
+          <button class="btn-ghost" (click)="scrollToGallery()">View Cornrow Styles</button>
+        </div>
+        <div class="lp-hero-stats">
+          <div class="lp-stat">
+            <span class="lp-stat-value">Natural</span>
+            <span class="lp-stat-label">Finish</span>
+          </div>
+          <div class="lp-stat-divider"></div>
+          <div class="lp-stat">
+            <span class="lp-stat-value">Clean</span>
+            <span class="lp-stat-label">Parting</span>
+          </div>
+          <div class="lp-stat-divider"></div>
+          <div class="lp-stat">
+            <span class="lp-stat-value">5★</span>
+            <span class="lp-stat-label">Client Rated</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="lp-hero-image">
+        <img
+          src="assets/images/cornrows/gallery-braid-12.jpeg"
+          alt="Cornrows South West London — AMA Hair Studio precision scalp braids"
+          loading="eager"
+          decoding="async"
+        />
+        <div class="lp-hero-image-frame"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── INTRODUCTION ─────────────────────────────────────── -->
+  <section class="lp-intro">
+    <div class="container">
+      <div class="lp-intro-inner" appScrollReveal>
+        <span class="section-label">The Studio</span>
+        <div class="gold-divider"></div>
+        <p class="lp-intro-copy">
+          AMA Hair Studio offers precise, low-tension cornrow appointments
+          in a calm South West London studio — focused on clean parting,
+          healthy scalp care, and long-lasting results that work with your
+          natural hair, not against it.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── GALLERY ───────────────────────────────────────────── -->
+  <section class="lp-gallery" id="cornrows-gallery">
+    <div class="container">
+
+      <div class="section-header" appScrollReveal>
+        <span class="section-label">Style Gallery</span>
+        <div class="gold-divider"></div>
+        <h2>Cornrow &amp; Stitch Braid <em>Styles</em></h2>
+        <p class="section-sub">
+          A curated selection of scalp braids, feed-ins, and stitch braid
+          styles — each completed privately with precision and care.
+        </p>
+      </div>
+
+      <div class="lp-gallery-grid">
+        @for (img of galleryImages; track img.url) {
+          <div class="lp-gallery-tile" appScrollReveal>
+            <img
+              [src]="img.url"
+              [alt]="img.alt"
+              [appLazyLoad]="true"
+              decoding="async"
+            />
+          </div>
+        }
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── BENEFITS ─────────────────────────────────────────── -->
+  <section class="lp-benefits">
+    <div class="container">
+
+      <div class="section-header" appScrollReveal>
+        <span class="section-label">Why Choose AMA</span>
+        <div class="gold-divider"></div>
+        <h2>Why Clients Love <em>AMA Cornrows</em></h2>
+      </div>
+
+      <div class="lp-benefits-grid">
+        @for (benefit of benefits; track benefit.title) {
+          <div class="lp-benefit-card" appScrollReveal>
+            <div class="lp-benefit-icon">
+              <ion-icon [name]="benefit.icon"></ion-icon>
+            </div>
+            <h4>{{ benefit.title }}</h4>
+            <p>{{ benefit.body }}</p>
+          </div>
+        }
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── THE AMA EXPERIENCE ───────────────────────────────── -->
+  <section class="lp-experience">
+    <div class="container">
+      <div class="lp-experience-inner">
+
+        <div class="lp-experience-text" appScrollReveal>
+          <span class="section-label section-label--light">The AMA Difference</span>
+          <div class="gold-divider"></div>
+          <h2>Precision Work,<br><em>Private Studio</em></h2>
+          <p>
+            Every cornrow appointment is carried out in a calm, private setting
+            with full attention to the quality of each part and the health of
+            your scalp. No rushing, no distractions.
+          </p>
+          <p>
+            Whether you're after a clean straight-back, stitch braids with a
+            sharp finish, or a freestyle pattern — the process is the same:
+            measured, careful, and done properly.
+          </p>
+          <button class="btn-gold-ghost" (click)="openEnquiry()">
+            Request Your Appointment
+          </button>
+        </div>
+
+        <div class="lp-experience-pillars" appScrollReveal>
+          <div class="lp-experience-pillar">
+            <h4>No Salon Rush</h4>
+            <p>Appointments are never squeezed in. Your slot is yours — unhurried, from start to finish.</p>
+          </div>
+          <div class="lp-experience-pillar">
+            <h4>Neat Finish</h4>
+            <p>Clean parts, consistent tension, and a sharp finish that holds its shape for weeks.</p>
+          </div>
+          <div class="lp-experience-pillar">
+            <h4>Scalp Friendly</h4>
+            <p>Low-tension technique throughout — no tightness, no discomfort, no damage to edges or natural hairline.</p>
+          </div>
+          <div class="lp-experience-pillar">
+            <h4>Private Appointment</h4>
+            <p>One client at a time. Always calm, always focused, always one-to-one.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ───────────────────────────────────────────────── -->
+  <section class="lp-faq">
+    <div class="container">
+
+      <div class="section-header" appScrollReveal>
+        <span class="section-label">Questions</span>
+        <div class="gold-divider"></div>
+        <h2>Frequently Asked <em>Questions</em></h2>
+      </div>
+
+      <div class="lp-faq-list">
+        @for (faq of faqs; track faq.question; let i = $index) {
+          <div class="lp-faq-item" [class.open]="faq.open" appScrollReveal>
+            <button class="lp-faq-trigger" (click)="toggleFaq(i)" [attr.aria-expanded]="faq.open">
+              <span>{{ faq.question }}</span>
+              <ion-icon name="chevron-down-outline" class="lp-faq-chevron"></ion-icon>
+            </button>
+            <div class="lp-faq-body">
+              <div class="lp-faq-body-inner">
+                <p>{{ faq.answer }}</p>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── SERVICE AREAS ─────────────────────────────────────── -->
+  <section class="lp-areas">
+    <div class="container">
+      <div class="lp-areas-inner" appScrollReveal>
+        <span class="section-label">Serving</span>
+        <div class="gold-divider"></div>
+        <h3>South West London <em>&amp; Beyond</em></h3>
+        <ul class="lp-areas-list">
+          <li>Battersea</li>
+          <li>Clapham</li>
+          <li>Fulham</li>
+          <li>Chelsea</li>
+          <li>Brixton</li>
+          <li>Wandsworth</li>
+          <li>Balham</li>
+          <li>Streatham</li>
+        </ul>
+        <p class="lp-areas-note">
+          Studio and home visits available by arrangement.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FINAL CTA ─────────────────────────────────────────── -->
+  <section class="lp-cta">
+    <div class="container">
+      <div class="lp-cta-inner" appScrollReveal>
+        <span class="section-label section-label--light">Get Started</span>
+        <div class="gold-divider"></div>
+        <h2>Request Your <em>Appointment</em></h2>
+        <p class="lp-cta-sub">
+          Private cornrow appointments tailored with precision, care, and
+          attention to detail.
+        </p>
+        <div class="lp-cta-actions">
+          <button class="btn-gold" (click)="openEnquiry()">Request Appointment</button>
+          <button class="lp-whatsapp-btn" (click)="openWhatsApp()">
+            <ion-icon name="logo-whatsapp"></ion-icon>
+            WhatsApp AMA
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <app-footer></app-footer>
+
+</main>

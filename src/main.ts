@@ -1,6 +1,6 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
-import { RouteReuseStrategy, provideRouter, withHashLocation } from '@angular/router';
+import { RouteReuseStrategy, provideRouter } from '@angular/router';
 import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalone';
 
 import { AppComponent } from './app/app.component';
@@ -10,7 +10,7 @@ bootstrapApplication(AppComponent, {
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     provideIonicAngular({}),
-    provideRouter(routes, withHashLocation()),
+    provideRouter(routes),
     provideAnimations(),
   ],
 }).catch(console.error);

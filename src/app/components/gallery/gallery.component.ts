@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
 import { EnquiryModalService } from '../../services/enquiry-modal.service';
 
@@ -19,7 +20,7 @@ interface GalleryImage {
 @Component({
   selector: 'app-gallery',
   standalone: true,
-  imports: [ScrollRevealDirective],
+  imports: [ScrollRevealDirective, RouterLink],
   templateUrl: './gallery.component.html',
   styleUrls: ['./gallery.component.scss'],
 })

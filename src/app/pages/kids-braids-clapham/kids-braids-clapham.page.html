@@ -1,0 +1,245 @@
+<main class="lp">
+
+  <!-- ─── HERO ─────────────────────────────────────────────── -->
+  <section class="lp-hero">
+    <div class="lp-hero-grid">
+
+      <div class="lp-hero-text">
+        <span class="section-label">Kids Braids · Clapham</span>
+        <div class="gold-divider"></div>
+        <h1>Kids Braids<br><em>in Clapham</em></h1>
+        <p class="lp-hero-sub">
+          Gentle, child-friendly braid appointments in a calm South West
+          London studio environment — designed to feel comfortable and
+          stress-free for every child.
+        </p>
+        <div class="lp-hero-actions">
+          <button class="btn-gold" (click)="openEnquiry()">Request Appointment</button>
+          <button class="btn-ghost" (click)="scrollToGallery()">View Kids Styles</button>
+        </div>
+        <div class="lp-hero-stats">
+          <div class="lp-stat">
+            <span class="lp-stat-value">1-to-1</span>
+            <span class="lp-stat-label">Private Studio</span>
+          </div>
+          <div class="lp-stat-divider"></div>
+          <div class="lp-stat">
+            <span class="lp-stat-value">Calm</span>
+            <span class="lp-stat-label">Relaxed Pace</span>
+          </div>
+          <div class="lp-stat-divider"></div>
+          <div class="lp-stat">
+            <span class="lp-stat-value">5★</span>
+            <span class="lp-stat-label">Client Rated</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="lp-hero-image">
+        <img
+          src="assets/images/kids-braids/kids-braids-6.jpeg"
+          alt="Kids braids appointment — AMA Hair Studio Clapham"
+          loading="eager"
+          decoding="async"
+        />
+        <div class="lp-hero-image-frame"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── INTRODUCTION ─────────────────────────────────────── -->
+  <section class="lp-intro">
+    <div class="container">
+      <div class="lp-intro-inner" appScrollReveal>
+        <span class="section-label">The Studio</span>
+        <div class="gold-divider"></div>
+        <p class="lp-intro-copy">
+          AMA Hair Studio offers calm, one-to-one children's braid appointments
+          designed to feel comfortable and gentle for both parents and children.
+          Every session is private, unhurried, and approached with patience —
+          because a child's first braid experience should be a good one.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── GALLERY ───────────────────────────────────────────── -->
+  <section class="lp-gallery" id="kids-gallery">
+    <div class="container">
+
+      <div class="section-header" appScrollReveal>
+        <span class="section-label">Style Gallery</span>
+        <div class="gold-divider"></div>
+        <h2>Kids Braid <em>Styles</em></h2>
+        <p class="section-sub">
+          A selection of children's styles completed privately, with
+          care and precision.
+        </p>
+      </div>
+
+      <div class="lp-gallery-grid">
+        @for (img of galleryImages; track img.url) {
+          <div class="lp-gallery-tile" appScrollReveal>
+            <img
+              [src]="img.url"
+              [alt]="img.alt"
+              [appLazyLoad]="true"
+              decoding="async"
+            />
+          </div>
+        }
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── WHY PARENTS CHOOSE AMA ───────────────────────────── -->
+  <section class="lp-benefits">
+    <div class="container">
+
+      <div class="section-header" appScrollReveal>
+        <span class="section-label">Why Parents Choose AMA</span>
+        <div class="gold-divider"></div>
+        <h2>A Studio Built for <em>Little Ones</em></h2>
+      </div>
+
+      <div class="lp-benefits-grid">
+        @for (benefit of benefits; track benefit.title) {
+          <div class="lp-benefit-card" appScrollReveal>
+            <div class="lp-benefit-icon">
+              <ion-icon [name]="benefit.icon"></ion-icon>
+            </div>
+            <h4>{{ benefit.title }}</h4>
+            <p>{{ benefit.body }}</p>
+          </div>
+        }
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── APPOINTMENT EXPERIENCE ───────────────────────────── -->
+  <section class="lp-experience">
+    <div class="container">
+      <div class="lp-experience-inner">
+
+        <div class="lp-experience-text" appScrollReveal>
+          <span class="section-label section-label--light">The Experience</span>
+          <div class="gold-divider"></div>
+          <h2>Calm Appointments,<br><em>Happy Children</em></h2>
+          <p>
+            Children's appointments are designed to feel completely relaxed
+            from the moment you arrive. There's no salon noise, no other clients
+            in the space, and no pressure to rush through the process.
+          </p>
+          <p>
+            If a child needs a moment, they get one. Every child is different —
+            and every appointment is paced with that in mind. The goal is always
+            a comfortable experience and a style both parent and child are proud of.
+          </p>
+          <button class="btn-gold-ghost" (click)="openEnquiry()">
+            Request Your Appointment
+          </button>
+        </div>
+
+        <div class="lp-experience-pillars" appScrollReveal>
+          <div class="lp-experience-pillar">
+            <h4>No Salon Noise</h4>
+            <p>A private, quiet studio environment — a world away from the chaos of a busy salon.</p>
+          </div>
+          <div class="lp-experience-pillar">
+            <h4>Child's Pace</h4>
+            <p>Appointments are never rushed. If a child needs a break, the session adapts around them.</p>
+          </div>
+          <div class="lp-experience-pillar">
+            <h4>Parents Welcome</h4>
+            <p>You stay for the entire appointment. Nothing starts until your child is comfortable and settled.</p>
+          </div>
+          <div class="lp-experience-pillar">
+            <h4>Healthy First</h4>
+            <p>Gentle technique and no tight tension — protecting your child's scalp and natural hair from day one.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ───────────────────────────────────────────────── -->
+  <section class="lp-faq">
+    <div class="container">
+
+      <div class="section-header" appScrollReveal>
+        <span class="section-label">Questions</span>
+        <div class="gold-divider"></div>
+        <h2>Frequently Asked <em>Questions</em></h2>
+      </div>
+
+      <div class="lp-faq-list">
+        @for (faq of faqs; track faq.question; let i = $index) {
+          <div class="lp-faq-item" [class.open]="faq.open" appScrollReveal>
+            <button class="lp-faq-trigger" (click)="toggleFaq(i)" [attr.aria-expanded]="faq.open">
+              <span>{{ faq.question }}</span>
+              <ion-icon name="chevron-down-outline" class="lp-faq-chevron"></ion-icon>
+            </button>
+            <div class="lp-faq-body">
+              <div class="lp-faq-body-inner">
+                <p>{{ faq.answer }}</p>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── SERVICE AREAS ─────────────────────────────────────── -->
+  <section class="lp-areas">
+    <div class="container">
+      <div class="lp-areas-inner" appScrollReveal>
+        <span class="section-label">Serving</span>
+        <div class="gold-divider"></div>
+        <h3>South West London <em>&amp; Beyond</em></h3>
+        <ul class="lp-areas-list">
+          <li>Clapham</li>
+          <li>Battersea</li>
+          <li>Fulham</li>
+          <li>Wandsworth</li>
+          <li>Chelsea</li>
+          <li>Balham</li>
+          <li>Streatham</li>
+          <li>South West London</li>
+        </ul>
+        <p class="lp-areas-note">
+          Studio and home visits available by arrangement.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FINAL CTA ─────────────────────────────────────────── -->
+  <section class="lp-cta">
+    <div class="container">
+      <div class="lp-cta-inner" appScrollReveal>
+        <span class="section-label section-label--light">Get Started</span>
+        <div class="gold-divider"></div>
+        <h2>Request Your <em>Appointment</em></h2>
+        <p class="lp-cta-sub">
+          Calm, child-friendly braid appointments tailored with care and comfort.
+        </p>
+        <div class="lp-cta-actions">
+          <button class="btn-gold" (click)="openEnquiry()">Request Appointment</button>
+          <button class="lp-whatsapp-btn" (click)="openWhatsApp()">
+            <ion-icon name="logo-whatsapp"></ion-icon>
+            WhatsApp AMA
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <app-footer></app-footer>
+
+</main>
