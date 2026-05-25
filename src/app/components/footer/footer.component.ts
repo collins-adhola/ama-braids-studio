@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { IonIcon } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { logoInstagram, logoWhatsapp, logoFacebook } from 'ionicons/icons';
+import { SectionScrollService } from '../../services/section-scroll.service';
 
 @Component({
   selector: 'app-footer',
@@ -14,13 +15,19 @@ import { logoInstagram, logoWhatsapp, logoFacebook } from 'ionicons/icons';
 export class FooterComponent implements OnInit {
   currentYear = new Date().getFullYear();
 
+  constructor(private router: Router, private scrollService: SectionScrollService) {}
+
   ngOnInit(): void {
     addIcons({ logoInstagram, logoWhatsapp, logoFacebook });
   }
 
   scrollToSection(id: string): void {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    if (this.router.url.split('?')[0].split('#')[0] === '/') {
+      this.scrollService.request(id);
+    } else {
+      this.scrollService.setPending(id);
+      this.router.navigate(['/']);
+    }
   }
 
   openWhatsApp(): void {

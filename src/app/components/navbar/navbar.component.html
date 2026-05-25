@@ -1,11 +1,11 @@
 <nav class="navbar" [class.scrolled]="isScrolled">
   <div class="navbar-inner">
-    <div class="logo" (click)="scrollToSection('hero')">AMA</div>
+    <div class="logo" (click)="goHome()">AMA</div>
 
     <ul class="nav-links">
-      <li><a (click)="scrollToSection('about')">About</a></li>
-      <li><a (click)="scrollToSection('gallery')">Styles</a></li>
-      <li><a (click)="scrollToSection('testimonials')">Reviews</a></li>
+      <li><a (click)="navigateToSection('about')">About</a></li>
+      <li><a (click)="navigateToSection('gallery')">Styles</a></li>
+      <li><a (click)="navigateToSection('testimonials')">Reviews</a></li>
     </ul>
 
     <button class="btn-book" (click)="openEnquiry()">Request Appointment</button>
@@ -17,9 +17,9 @@
 
   <div class="mobile-menu" [class.open]="menuOpen">
     <ul>
-      <li><a (click)="scrollToSection('about')">About</a></li>
-      <li><a (click)="scrollToSection('gallery')">Styles</a></li>
-      <li><a (click)="scrollToSection('testimonials')">Reviews</a></li>
+      <li><a (click)="navigateToSection('about')">About</a></li>
+      <li><a (click)="navigateToSection('gallery')">Styles</a></li>
+      <li><a (click)="navigateToSection('testimonials')">Reviews</a></li>
       <li>
         <a class="mobile-cta" (click)="openEnquiry()">Request Appointment</a>
       </li>
